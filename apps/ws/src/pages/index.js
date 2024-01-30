@@ -4,10 +4,12 @@ const WebSocketPage = () => {
     const [message, setMessage] = useState('');
     const [receivedMessages, setReceivedMessages] = useState([]);
     const [ws, setWs] = useState(null);
+    const port = 3001;
+
 
     useEffect(() => {
         // Create a WebSocket connection when the component mounts
-        const socket = new WebSocket('ws://localhost:3000');
+        const socket = new WebSocket(`ws://localhost:${port}`);
         setWs(socket);
 
         // Event listener for connection open

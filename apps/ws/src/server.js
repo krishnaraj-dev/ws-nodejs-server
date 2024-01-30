@@ -1,7 +1,8 @@
 const { WebSocket } = require("ws")
 
+const port = 3001
 // Create a WebSocket server on port 3000
-const wss = new WebSocket.Server({ port: 3000 });
+const wss = new WebSocket.Server({ port });
 
 // Event listener for connection
 wss.on("connection", (ws) => {
@@ -21,4 +22,4 @@ wss.on("connection", (ws) => {
   });
 });
 
-console.log("WebSocket server is listening on port 3000");
+console.log(`WebSocket server is listening on port ${port}`);
