@@ -9,18 +9,14 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
  */
 const wsProxy = createProxyMiddleware({
   target: 'http://ws.ifelse.io',
-  // pathRewrite: {
-  //  '^/websocket' : '/socket',        // rewrite path.
-  //  '^/removepath' : ''               // remove path.
-  // },
-  changeOrigin: true, // for vhosted sites, changes host header to match to target's host
-  ws: true, // enable websocket proxy
+  changeOrigin: true,
+  ws: true,
   logger: console,
 });
 
 const app = express();
-app.use('/', express.static(__dirname)); // demo page
-app.use(wsProxy); // add the proxy to express
+app.use('/', express.static(__dirname));
+app.use(wsProxy);
 
 const server = app.listen(3000);
 server.on('upgrade', wsProxy.upgrade); // optional: upgrade externally
