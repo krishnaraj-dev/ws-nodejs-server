@@ -1,0 +1,26 @@
+{
+  "name": "ws",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently \"nodemon\"  \"next dev -p 8080\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.16.0",
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.9",
+    "@types/ws": "^8.5.10",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "concurrently": "8.2.2",
+    "nodemon": "3.0.3",
+    "ts-node": "^10.9.2"
+  }
+}

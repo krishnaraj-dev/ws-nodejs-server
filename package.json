@@ -4,7 +4,9 @@
   "private": true,
   "description": "",
   "scripts": {
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "dev:http-proxy-middleware": "turbo run dev --filter http-proxy-middleware",
+    "dev:ws": "turbo run dev --filter ws",
     "clean": "pnpm -r exec rm -rf dist node_modules && rm -rf node_modules && echo \"✅  Successfully removed node_modules and build artifacts\""
   },
   "author": "Krishnaraj R",

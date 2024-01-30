@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "server",
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "es6"
+    ],
+    "allowJs": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "types": [
+      "node"
+    ],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
