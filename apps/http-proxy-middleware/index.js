@@ -10,7 +10,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const wsProxy = createProxyMiddleware({
   //1. https://ws.ifelse.io/
   //2. https://echo.websocket.org/
-  target: 'https://echo.websocket.org/',
+  target: 'https://ws.ifelse.io/',
   changeOrigin: true,
   ws: true,
   logger: console,
@@ -23,7 +23,6 @@ app.use(wsProxy);
 const server = app.listen(3000);
 server.on('upgrade', wsProxy.upgrade); // optional: upgrade externally
 
-console.log('[DEMO] Server: listening on port 3000');
 console.log('[DEMO] Opening: http://localhost:3000');
 
 
