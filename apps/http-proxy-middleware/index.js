@@ -17,7 +17,7 @@ const wsProxy = createProxyMiddleware({
 });
 
 const app = express();
-app.use('/', express.static(__dirname));
+app.use('/page', express.static(__dirname));
 app.use(wsProxy);
 
 const server = app.listen(3000);
