@@ -1,20 +1,21 @@
 {
-  "name": "ws-nodejs-server",
+  "name": "ws-server",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "scripts": {
-    "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:http-proxy-middleware": "turbo run dev --filter http-proxy-middleware",
+    "clean": "pnpm -r exec rm -rf dist node_modules && rm -rf node_modules && echo \"✅  Successfully removed node_modules and build artifacts\""
   },
-  "author": "",
+  "author": "Krishnaraj R",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2",
-    "http-proxy-middleware": "^2.0.6"
-  },
   "devDependencies": {
-    "@types/node": "^20.11.9",
-    "nodemon": "3.0.3",
-    "ts-node": "^10.9.2"
-  }
+    "turbo": "^1.11.2",
+    "typescript": "^5.3.3",
+    "vercel": "^33.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@7.5.1"
 }
