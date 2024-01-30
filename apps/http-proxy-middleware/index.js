@@ -8,7 +8,9 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
  * Configure proxy middleware
  */
 const wsProxy = createProxyMiddleware({
-  target: 'http://ws.ifelse.io',
+  //1. https://ws.ifelse.io/
+  //2. https://echo.websocket.org/
+  target: 'https://echo.websocket.org/',
   changeOrigin: true,
   ws: true,
   logger: console,
