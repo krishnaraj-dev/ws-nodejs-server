@@ -1,6 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "server",
   "compilerOptions": {
     "outDir": "dist",
     "target": "es5",
@@ -22,10 +21,12 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": [
-    "src"
-  ],
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

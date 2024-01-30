@@ -4,6 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "concurrently \"nodemon\"  \"next dev -p 8080\"",
+    "start": "concurrently \"node src/server.js\" \"next start -p 8080\"",
+    "build": "concurrently \"next build\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
