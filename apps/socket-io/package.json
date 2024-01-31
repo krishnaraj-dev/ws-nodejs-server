@@ -1,5 +1,5 @@
 {
-  "name": "websocket-serverless",
+  "name": "socket-io",
   "version": "1.0.0",
   "description": "Next.js project with WebSocket serverless function",
   "scripts": {
