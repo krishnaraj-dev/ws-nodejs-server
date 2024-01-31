@@ -1,0 +1,17 @@
+{
+  "name": "websocket-serverless",
+  "version": "1.0.0",
+  "description": "Next.js project with WebSocket serverless function",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.18.2",
+    "socket.io": "^4.0.1",
+    "socket.io-client": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.13"
+  }
+}
