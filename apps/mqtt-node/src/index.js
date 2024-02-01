@@ -32,8 +32,6 @@ client.on('subscribe', (granted) => {
 // Handle connection events
 client.on('connect', () => {
     console.log('Connected to MQTT broker');
-
-
 });
 
 client.on('error', (error) => {
