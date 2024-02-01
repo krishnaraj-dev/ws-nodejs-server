@@ -1,7 +1,10 @@
 const mqtt = require('mqtt');
+const express = require('express');
+const app = express();
+app.use(express.json());
 
 // Replace 'your-mqtt-broker-url' with the actual URL of your MQTT broker
-const brokerUrl = 'mqtt://broker.hivemq.com:1883';
+const brokerUrl = 'mqtt://broker.hivemq.com';
 
 // Create an MQTT client
 const client = mqtt.connect(brokerUrl, {
@@ -45,3 +48,19 @@ client.on('close', () => {
 client.on("offline", () => {
     console.log("client go offline");
 });
+
+
+app.get("/", (_, res) => {
+    res.status(200).send({
+        status: 200,
+        message: "Api Running!",
+    });
+});
+
+const port = process.env.PORT ?? 3000;
+app.listen({ port }, () => {
+    console.log(`🚀 Apollo server running in http://localhost:${port}`);
+});
+
+// Export the Express API
+module.exports = app;
