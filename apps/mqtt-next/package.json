@@ -1,0 +1,18 @@
+{
+  "name": "mqtt-next",
+  "version": "1.0.0",
+  "description": "nextjs with mqtt",
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build"
+  },
+  "dependencies": {
+    "mqtt": "5.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.13",
+    "next": "^14.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
