@@ -1,5 +1,4 @@
-const cors = require("cors");
-const express = require("express");
+
 
 const mqtt = require("mqtt");
 // PEM certificate content (replace with your actual certificate content)
@@ -82,7 +81,7 @@ const caCertificates = [
 // Replace 'your-mqtt-broker-url' with the actual URL of your MQTT broker
 const brokerUrl = "mqtts://test.mosquitto.org:8884";
 
-function initiateMQTT() {
+async function initiateMQTT() {
   // Create an MQTT client
   const client = mqtt.connect(brokerUrl, {
     clientId: "default_client_id",
@@ -132,28 +131,12 @@ function initiateMQTT() {
   });
 }
 
-async function runApp() {
-  const app = express();
-  app.use(express.json(), cors());
 
-  // const port = process.env.PORT ?? 4001;
-  // app.listen({ port }, () => {
-  //   console.log(`🚀 Apollo server running in http://localhost:${port}`);
-  // });
+export default async function handler(req, res) {
+  const { name = "World" } = req.query;
 
-
-  initiateMQTT();
-  app.get("/", (_, res) => {
-
-    res.status(200).send({
-      status: 200,
-      message: "Api Running!",
-    });
+  await initiateMQTT()
+  return res.json({
+    message: `Hello ${name}!`,
   });
 }
-
-runApp().catch((error) =>
-  console.error("Error while starting MyProfile Service ", error)
-);
-
-module.exports = runApp;

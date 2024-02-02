@@ -1,22 +1,19 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./server.json",
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es5",
-    "module": "commonjs",
-    "lib": ["es6"],
-    "allowJs": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "types": ["node"],
     "skipLibCheck": true,
     "noEmit": true,
     "incremental": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.js"]
+  "include": [
+    "**/*.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

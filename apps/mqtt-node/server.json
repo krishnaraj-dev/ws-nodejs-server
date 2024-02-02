@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "server",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6"],
+    "allowJs": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "types": ["node"],
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
